@@ -1,0 +1,83 @@
+commit 1e156e238dbd32221aaff0121e799b3f36e6e0d2                                                                         
+Author: Nana Reinikainen <nana.reinikainen@helsinki.fi>                                                                 
+Date:   Mon Nov 8 21:44:58 2021 +0200                                                                                                                                                                                                               
+uudelleennimeäminen                                                                                                                                                                                                                          
+tiedostoja/{file2 => file22} | 0                                                                                        
+1 file changed, 0 insertions(+), 0 deletions(-)                                                                                                                                                                                                
+commit e636c5b097b06c1fb136a29faac35a49399bd8d7                                                                         
+Author: Nana Reinikainen <nana.reinikainen@helsinki.fi>                                                                 
+Date:   Mon Nov 8 21:44:10 2021 +0200                                                                                                                                                                                                               
+poistetty file1                                                                                                                                                                                                                              
+tiedostoja/file1 | 0                                                                                                    
+1 file changed, 0 insertions(+), 0 deletions(-)                                                                                                                                                                                                
+commit 36aaafdb4690547144fa2e75a3e541e37485c003                                                                         
+Author: Nana Reinikainen <nana.reinikainen@helsinki.fi>                                                                 
+Date:   Mon Nov 8 21:32:45 2021 +0200                                                                                                                                                                                                               
+hakemisto ja sen sisälle tiedostoja                                                                                                                                                                                                          
+tiedostoja/file1 | 0                                                                                                    
+tiedostoja/file2 | 0                                                                                                    
+tiedostoja/file3 | 0                                                                                                    
+3 files changed, 0 insertions(+), 0 deletions(-)                                                                                                                                                                                               
+commit 016b0b4f4b6c369fae978bc902ce5af2bef62988                                                                         
+Author: Nana Reinikainen <nana.reinikainen@helsinki.fi>                                                                 
+Date:   Mon Nov 8 21:24:40 2021 +0200                                                                                                                                                                                                               
+muutoksia ekaan ja kolmoseen                                                                                                                                                                                                                 
+eka.txt    | 4 ++--                                                                                                     
+kolmas.txt | 3 ++-                                                                                                      
+2 files changed, 4 insertions(+), 3 deletions(-)                                                                                                                                                                                               
+commit c7a82499ef1c26cc40ef641b64d79764aa71f0d6                                                                         
+Author: Nana Reinikainen <nana.reinikainen@helsinki.fi>                                                                 
+Date:   Mon Nov 8 21:20:38 2021 +0200                                                                                                                                                                                                               
+uudelleennimeäminen                                                                                                                                                                                                                          
+tiedosto.txt => eka.txt | 0                                                                                             
+1 file changed, 0 insertions(+), 0 deletions(-)                                                                                                                                                                                                
+commit 3b8413facc972a179c22cd022ba00be96b36db29                                                                         
+Author: Nana Reinikainen <nana.reinikainen@helsinki.fi>                                                                 
+Date:   Mon Nov 8 21:17:54 2021 +0200                                                                                                                                                                                                               
+toinen poistettu                                                                                                                                                                                                                             
+toinen.txt | 1 -                                                                                                        
+1 file changed, 1 deletion(-)                                                                                                                                                                                                                  
+commit 1cef43f02a6a251dba3a8be88e54c5da5272e40c                                                                         
+Author: Nana Reinikainen <nana.reinikainen@helsinki.fi>                                                                 
+Date:   Mon Nov 8 21:15:22 2021 +0200                                                                                                                                                                                                               
+tekstiä lisätty ja poistettu                                                                                                                                                                                                                 
+tiedosto.txt | 14 +++++++++++++-                                                                                        
+1 file changed, 13 insertions(+), 1 deletion(-)                                                                                                                                                                                                
+commit 0599d45afe27424477c69089d75ba55458aced46                                                                         
+Author: Nana Reinikainen <nana.reinikainen@helsinki.fi>                                                                 
+Date:   Mon Nov 8 21:11:00 2021 +0200                                                                                                                                                                                                               
+tekstiä lisätty                                                                                                                                                                                                                              
+tiedosto.txt | 20 ++++++++++++++++++++                                                                                  
+1 file changed, 20 insertions(+)                                                                                                                                                                                                               
+commit 82dfdd9b0d771f3e854723126825c44e69fe5348                                                                         
+Author: Nana Reinikainen <nana.reinikainen@helsinki.fi>                                                                 
+Date:   Mon Nov 8 21:05:06 2021 +0200                                                                                                                                                                                                               
+uusi hakemisto ja tiedosto                                                                                                                                                                                                                   
+stuff/jokin.txt | 0                                                                                                     
+1 file changed, 0 insertions(+), 0 deletions(-)                                                                                                                                                                                                
+commit ef0101c5910c5754d98fbcec6070b6e25ea9c3d0                                                                         
+Author: Nana Reinikainen <nana.reinikainen@helsinki.fi>                                                                 
+Date:   Mon Nov 8 21:03:37 2021 +0200                                                                                                                                                                                                               
+muutos tehty tokaan ja kolmanteen                                                                                                                                                                                                            
+kolmas.txt | 1 +                                                                                                        
+toinen.txt | 1 +                                                                                                        
+2 files changed, 2 insertions(+)                                                                                                                                                                                                               
+commit b835e92e989615f34f8c33dd77893bd8233eb994                                                                         
+Author: Nana Reinikainen <nana.reinikainen@helsinki.fi>                                                                 
+Date:   Mon Nov 8 21:01:40 2021 +0200                                                                                                                                                                                                               
+lisätty kolmas                                                                                                                                                                                                                               
+kolmas.txt | 0                                                                                                          
+1 file changed, 0 insertions(+), 0 deletions(-)                                                                                                                                                                                                
+commit 30d7f41464f2277b02803246fcc2c5966ef1b440                                                                         
+Author: Nana Reinikainen <nana.reinikainen@helsinki.fi>                                                                 
+Date:   Mon Nov 8 20:59:26 2021 +0200                                                                                                                                                                                                               
+muutos ja lisäys                                                                                                                                                                                                                             
+tiedosto.txt | 1 +                                                                                                      
+toinen.txt   | 0                                                                                                        
+2 files changed, 1 insertion(+)                                                                                                                                                                                                                
+commit ce9fdad372144540009577b730f5ee8ad4eb515a                                                                         
+Author: Nana Reinikainen <nana.reinikainen@helsinki.fi>                                                                 
+Date:   Mon Nov 8 20:56:43 2021 +0200                                                                                                                                                                                                               
+tiedosto.txt luoto                                                                                                                                                                                                                           
+tiedosto.txt | 0                                                                                                        
+1 file changed, 0 insertions(+), 0 deletions(-)
