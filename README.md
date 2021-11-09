@@ -8,3 +8,7 @@ Markdown-muotoilulla tekstiä pystyy **lihavoimaan** ja *kursivoimaan*. Tämän 
 # Isoin otsikko yhdellä #-merkillä
 ## Pienempi otsikko kahdella #-merkillä
 ###### Pienin otsikko kuudella #-merkillä
+  
+  
+## Dokumentaatiot  
+[Määrittelydokumentti](https://github.com/Na-na13/Bounce-the-Ball/blob/master/dokumentaatiot/maarittelydokumentti.md)
