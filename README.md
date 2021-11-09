@@ -9,6 +9,10 @@ Markdown-muotoilulla tekstiä pystyy **lihavoimaan** ja *kursivoimaan*. Tämän 
 ## Pienempi otsikko kahdella #-merkillä
 ###### Pienin otsikko kuudella #-merkillä
   
+### Viikko 2
+[1. maksukortti-tehtävät](https://github.com/Na-na13/Bounce-the-Ball/tree/master/laskarit/viikko2/maksukortti)
   
+  
+    
 ## Dokumentaatiot  
 [Määrittelydokumentti](https://github.com/Na-na13/Bounce-the-Ball/blob/master/dokumentaatiot/maarittelydokumentti.md)
