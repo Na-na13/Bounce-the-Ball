@@ -1,4 +1,8 @@
 # Ohjelmistotekniikka, harjoitustyö (Bounce the Ball)
+## Dokumentaatiot
+[Tuntikirjanpito](https://github.com/Na-na13/Bounce-the-Ball/blob/master/dokumentaatiot/tuntikirjanpito.md)  
+[Määrittelydokumentti](https://github.com/Na-na13/Bounce-the-Ball/blob/master/dokumentaatiot/maarittelydokumentti.md)
+  
 ## Tehtävät
 ### Viikko 1  
 [gitlog.txt](https://github.com/Na-na13/Bounce-the-Ball/blob/master/laskarit/viikko1/gitlog.txt)  
@@ -10,9 +14,6 @@ Markdown-muotoilulla tekstiä pystyy **lihavoimaan** ja *kursivoimaan*. Tämän 
 ###### Pienin otsikko kuudella #-merkillä
   
 ### Viikko 2
-[1. maksukortti-tehtävät](https://github.com/Na-na13/Bounce-the-Ball/tree/master/laskarit/viikko2/maksukortti)
-  
-  
-    
-## Dokumentaatiot  
-[Määrittelydokumentti](https://github.com/Na-na13/Bounce-the-Ball/blob/master/dokumentaatiot/maarittelydokumentti.md)
+[1. maksukortti-tehtävät](https://github.com/Na-na13/Bounce-the-Ball/tree/master/laskarit/viikko2/maksukortti)   
+[Maksukortti-/kassapäätetehtävät](https://github.com/Na-na13/Bounce-the-Ball/tree/master/laskarit/viikko2/unicafe)  
+[Coverage report -kuva](https://github.com/Na-na13/Bounce-the-Ball/blob/master/laskarit/viikko2/coverage%20report%202.jpg)  
