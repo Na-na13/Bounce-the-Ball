@@ -7,7 +7,8 @@
   
 ### Syötteet  
   
-Palloa liikutellaan vasemmalle ja oikealle vastaavilla nuolinäppäimillä ja pallolla hypätään välilyöntinäppäimellä. Hypyn aikana pystyy samalla liikkumaan vasemmalle tai oikealle. Tasanteiden läpi ei pysty hyppimään, vaan jokaiselle tasanteelle pääsee vain hyppäämällä sen päädystä sen päälle. Tasanteet on sijoiteltu niin, että hypyn epäonnistuessa on mahdollista tippua alaspäin. Tippumisen aikana on myös mahdollista liikkua vasemmalle ja oikealle. 
+Palloa liikutellaan vasemmalle ja oikealle vastaavilla nuolinäppäimillä ja pallolla hypätään välilyöntinäppäimellä. Hypyn aikana pystyy samalla liikkumaan vasemmalle tai oikealle. Tasanteiden läpi ei pysty hyppimään, vaan jokaiselle tasanteelle pääsee vain hyppäämällä sen päädystä sen päälle. Tasanteet on sijoiteltu niin, että hypyn epäonnistuessa on mahdollista tippua alaspäin. Tippumisen aikana on myös mahdollista liikkua vasemmalle ja oikealle samalla tavoin kuin hypynkin aikana.  
+  
 ### Pisteiden kerääminen  
   
 Pelissä on tarkoitus kerätä pelikentältä löytyviä tähtiä, jotka on sijoiteltu matkan varrelle, toiset helpompiin ja toiset haastavampiin paikkoihin. Tähden saa kerättyä osumalla pallolla tähteen. Jokaisesta tähdestä saa saman verran pisteitä. Pisteitä saa myös nopeudesta eli mitä nopeammin pallolla pääsee maaliin, sitä enemmän pisteitä saa
