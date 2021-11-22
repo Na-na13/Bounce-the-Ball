@@ -1,19 +1,8 @@
-# Ohjelmistotekniikka, harjoitustyö (Bounce the Ball)
+# Bounce the Ball (ohjelmistotekniikka, harjoitustyö)  
+Bounce the Ball on yksinkertainen tasohyppelypeli, jossa liikutetaan palloa läpi pelikentän kohti maalia keräten matkalla tähtiä, joista saa pisteitä
+  
 ## Dokumentaatiot
 [Tuntikirjanpito](https://github.com/Na-na13/Bounce-the-Ball/blob/master/dokumentaatiot/tuntikirjanpito.md)  
 [Määrittelydokumentti](https://github.com/Na-na13/Bounce-the-Ball/blob/master/dokumentaatiot/maarittelydokumentti.md)
-  
-## Tehtävät
-### Viikko 1  
-[gitlog.txt](https://github.com/Na-na13/Bounce-the-Ball/blob/master/laskarit/viikko1/gitlog.txt)  
-[komentorivi.txt](https://github.com/Na-na13/Bounce-the-Ball/blob/master/laskarit/viikko1/komentorivi.txt)  
-#### Markdown-kokeiluja
-Markdown-muotoilulla tekstiä pystyy **lihavoimaan** ja *kursivoimaan*. Tämän voi tehdä myös ***samanaikaisesti***. Otsikon saa laittamalla otsikon eteen #-merkin. Otsikon kokoa saa säädeltyä #-merkkien määrällä, esim:  
-# Isoin otsikko yhdellä #-merkillä
-## Pienempi otsikko kahdella #-merkillä
-###### Pienin otsikko kuudella #-merkillä
-  
-### Viikko 2
-[1. maksukortti-tehtävät](https://github.com/Na-na13/Bounce-the-Ball/tree/master/laskarit/viikko2/maksukortti)   
-[Maksukortti-/kassapäätetehtävät](https://github.com/Na-na13/Bounce-the-Ball/tree/master/laskarit/viikko2/unicafe)  
-[Coverage report -kuva](https://github.com/Na-na13/Bounce-the-Ball/blob/master/laskarit/viikko2/coverage%20report%202.jpg)  
+    
+## Pelin käynnistäminen
