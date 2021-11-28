@@ -8,11 +8,11 @@ class GameWindow:
         pygame.init()
 
         self.display = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
-        self.heigth = pygame.display.get_window_size()[1]
+        self.height = pygame.display.get_window_size()[1]
         self.width = pygame.display.get_window_size()[0]
         self.margin = 20 # vaihda suhdelukuun näytön koon kanssa
 
 if __name__ == "__main__":
     game = GameWindow()
-    ball = Ball(20,game.heigth,game.width,game.margin)
+    ball = Ball(20,game.height,game.width,game.margin)
     gameloop.GameLoop(game,ball)
