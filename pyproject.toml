@@ -7,9 +7,12 @@ authors = ["Nana Reinikainen <nana.reinikainen@helsinki.fi>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 invoke = "^1.6.0"
+pygame = "^2.1.0"
 
 [tool.poetry.dev-dependencies]
 pylint = "^2.12.1"
+coverage = "^6.2"
+pytest = "^6.2.5"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

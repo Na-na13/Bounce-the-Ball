@@ -15,12 +15,12 @@ class GameLoop:
         self.down = False
         self.max_jumpheight = 150
         self.clock = Clock()
-        self.start = self.clock.clock_get_ticks()
 
-        self.loop()
-        
+        #GameLoop.loop()
+
 
     def loop(self):
+        # start = self.clock.clock_get_ticks()
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -33,8 +33,9 @@ class GameLoop:
                         self.left = True
                     if event.key == pygame.K_RIGHT:
                         self.right = True
-                    if event.key == pygame.K_SPACE and self.up == False:
-                        if self.down == False:
+                    if event.key == pygame.K_SPACE and self.up is False:
+                        if self.down is False:
+                            # self.ball.jump_ball()
                             self.up = True
                 if event.type == pygame.KEYUP:
                     if event.key == pygame.K_LEFT:
@@ -42,6 +43,7 @@ class GameLoop:
                     if event.key == pygame.K_RIGHT:
                         self.right = False
             if self.right:
+                #self.ball.move()
                 if self.ball.ball_x >= self.game.width - self.game.margin - 7 - self.ball.ball_radius:
                     self.right = False
                 else:
@@ -56,7 +58,7 @@ class GameLoop:
                 if self.ball.ball_y <= self.game.height - self.game.margin - self.ball.ball_radius - self.max_jumpheight:
                     self.up = False
                     self.down = True
-                    
+
                 else:
                     self.ball.ball_y -= 10
 
@@ -66,9 +68,12 @@ class GameLoop:
                 else:
                     self.ball.ball_y += 10
 
-            self.game.display.fill(WHITE) 
-            pygame.draw.rect(self.game.display, BLACK, (self.game.margin,self.game.margin
-                            ,self.game.width-2*self.game.margin, self.game.height-2*self.game.margin),2) 
-            self.ball.draw_ball(self.game.display)
-            pygame.display.flip()
-            self.clock.clock_tick(60)
+            self.draw_display()
+
+    def draw_display(self):
+        self.game.display.fill(WHITE)
+        pygame.draw.rect(self.game.display, BLACK, (self.game.margin,self.game.margin
+                        ,self.game.width-2*self.game.margin, self.game.height-2*self.game.margin),2)
+        self.ball.draw_ball(self.game.display)
+        pygame.display.flip()
+        self.clock.clock_tick(60)

@@ -15,4 +15,5 @@ class GameWindow:
 if __name__ == "__main__":
     game = GameWindow()
     ball = Ball(20,game.height,game.width,game.margin)
-    gameloop.GameLoop(game,ball)
+    loop = gameloop.GameLoop(game,ball)
+    loop.loop()
