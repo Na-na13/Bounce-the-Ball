@@ -6,3 +6,4 @@ pvm    | aika | tehtävät
 23.11.|5 h|pelin koodauksen aloitus
 28.11.|4,5 h|peliin lisätty toimintoja
 29.11.|4 h|koodin parantelua
+yht.|15 h|
