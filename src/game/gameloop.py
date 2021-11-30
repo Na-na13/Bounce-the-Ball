@@ -55,8 +55,7 @@ class GameLoop:
 
         if True in moves:
             return True
-        else:
-            return False
+        return False
 
     def move_ball(self):
         if self.right:
@@ -71,7 +70,7 @@ class GameLoop:
             if not self.ball.move_up():
                 self.up = False
                 self.down = True
-        
+
         if self.down:
             if not self.ball.move_down():
                 self.down = False

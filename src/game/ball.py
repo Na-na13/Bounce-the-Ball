@@ -20,28 +20,23 @@ class Ball:
     def move_right(self):
         if self.ball_x >= self.width - self.margin - 7 - self.ball_radius:
             return False
-        else:
-            self.ball_x += 10
-            return True
-    
+        self.ball_x += 10
+        return True
+
     def move_left(self):
         if self.ball_x <= self.margin + 7 + self.ball_radius:
             return False
-        else:
-            self.ball_x -= 10
-            return True
+        self.ball_x -= 10
+        return True
 
     def move_up(self):
         if self.ball_y <= self.height - self.margin - self.ball_radius - self.max_jumpheight:
             return False
-
-        else:
-            self.ball_y -= 10
-            return True
+        self.ball_y -= 10
+        return True
 
     def move_down(self):
         if self.ball_y == self.height - self.margin - self.ball_radius - 2:
             return False
-        else:
-            self.ball_y += 10
-            return True
+        self.ball_y += 10
+        return True
