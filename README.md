@@ -3,7 +3,8 @@ Bounce the Ball on yksinkertainen tasohyppelypeli, jossa liikutetaan palloa läp
   
 ## Dokumentaatiot
 [Tuntikirjanpito](https://github.com/Na-na13/Bounce-the-Ball/blob/master/dokumentaatiot/tuntikirjanpito.md)  
-[Määrittelydokumentti](https://github.com/Na-na13/Bounce-the-Ball/blob/master/dokumentaatiot/maarittelydokumentti.md)
+[Määrittelydokumentti](https://github.com/Na-na13/Bounce-the-Ball/blob/master/dokumentaatiot/maarittelydokumentti.md)  
+[Arkkitehtuuri](https://github.com/Na-na13/Bounce-the-Ball/blob/master/dokumentaatiot/arkkitehtuuri.md)
     
 ## Pelin käynnistäminen
 1. Asenna rippuvuudet
