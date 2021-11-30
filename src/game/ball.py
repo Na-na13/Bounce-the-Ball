@@ -1,6 +1,7 @@
 import pygame
 
 RED = (255,0,0)
+WHITE = (255,255,255)
 
 class Ball:
     def __init__(self, radius, height, width, margin):
@@ -8,32 +9,39 @@ class Ball:
         self.ball_radius = radius # vaihda suhdelukuun näytön koon kanssa
         self.ball_x = width/2
         self.ball_y = height - margin - radius - 2
-        #self.height = height
-        #self.width = width
-        #self.margin = margin
-        # self.move_right = False
-        # self.move_left = False
+        self.height = height
+        self.width = width
+        self.margin = margin
+        self.max_jumpheight = 150
 
     def draw_ball(self, surface):
         pygame.draw.circle(surface, RED, (self.ball_x,self.ball_y), self.ball_radius)
 
-    #def move_ball_right(self):
-    #    if self.move_right:
-    #        if self.ball_x >= self.width - self.margin - 7 - self.ball_radius:
-    #            self.move_right = False
-    #        else:
-    #           self.ball_x += 10
+    def move_right(self):
+        if self.ball_x >= self.width - self.margin - 7 - self.ball_radius:
+            return False
+        else:
+            self.ball_x += 10
+            return True
+    
+    def move_left(self):
+        if self.ball_x <= self.margin + 7 + self.ball_radius:
+            return False
+        else:
+            self.ball_x -= 10
+            return True
 
-    #def move_ball_left(self):
-    #    if self.move_left:
-    #        if self.ball_x <= self.margin + 7 + self.ball_radius:
-    #            self.move_left = False
-    #        else:
-    #            self.ball_x -= 10
+    def move_up(self):
+        if self.ball_y <= self.height - self.margin - self.ball_radius - self.max_jumpheight:
+            return False
 
-    #def is_moving(self):
-    #    if self.move_ball_left == True or self.move_ball_left == True:
-    #        return True
+        else:
+            self.ball_y -= 10
+            return True
 
-    #def jump_ball(self):
-    #    pass
+    def move_down(self):
+        if self.ball_y == self.height - self.margin - self.ball_radius - 2:
+            return False
+        else:
+            self.ball_y += 10
+            return True
