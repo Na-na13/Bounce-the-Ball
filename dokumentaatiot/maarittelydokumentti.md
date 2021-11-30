@@ -22,3 +22,15 @@ Pelikentällä on erilaisia pallon etenemistä hidastavia esteitä, kuten ylhä�
 #### Tasanteelta tippuminen  
   
 Jos tasanteelta tippuu liian pitkän matkan alaspäin, pallo puhkeaa ja joutuu aloittamaan alusta  
+   
+### Edistyminen
+- [x] pallon liikuttaminen vasemmalle ja oikealle nuolinäppäimillä
+- [x] pallolla hyppääminen välilyöntinäppäimellä
+- [ ] pallolla hyppääminen tasanteille
+- [ ] tähtien kerääminen
+- [ ] pistelaskuri
+- [ ] ajanotto
+- [ ] maaliin pääseminen
+- [ ] aloitusikkuna
+- [ ] lopetusikkuna
+- [ ] high score -lista
