@@ -29,8 +29,18 @@ class TestBall(unittest.TestCase):
         self.testball.move_up()
         self.assertEqual(self.testball.ball_y,158)
 
+    def test_stop_move_up(self):
+        for i in range(1,17):
+            self.testball.move_up()
+        move = self.testball.move_up()
+        self.assertEqual(move, False)
+
     def test_move_down(self):
         self.testball.move_up()
         self.testball.move_up()
         self.testball.move_down()
         self.assertEqual(self.testball.ball_y, 158)
+
+    def test_stop_move_down(self):
+        move = self.testball.move_down()
+        self.assertEqual(move, False)
