@@ -26,8 +26,8 @@ Jos tasanteelta tippuu liian pitkän matkan alaspäin, pallo puhkeaa ja joutuu a
 ### Edistyminen
 - [x] pallon liikuttaminen vasemmalle ja oikealle nuolinäppäimillä
 - [x] pallolla hyppääminen välilyöntinäppäimellä
-- [ ] pallolla hyppääminen tasanteille
-- [ ] tähtien kerääminen
+- [x] pallolla hyppääminen tasanteille
+- [x] tähtien kerääminen
 - [ ] pistelaskuri
 - [ ] ajanotto
 - [ ] maaliin pääseminen
