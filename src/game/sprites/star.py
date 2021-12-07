@@ -1,5 +1,6 @@
-import pygame
 import os
+import pygame
+
 
 BLACK = (0,0,0)
 game_folder = os.path.split(os.path.dirname(__file__))[0]

@@ -11,11 +11,11 @@ BLACK = (0,0,0)
 
 class GameLoop:
     def __init__(self, window, clock):
-        self.window = window # GameWindow()
+        self.window = window
         self.right = False
         self.left = False
         self.jump = False
-        self.clock = clock # Clock()
+        self.clock = clock
 
         self.all_sprites = pygame.sprite.Group()
         self.platforms = pygame.sprite.Group()
@@ -42,7 +42,6 @@ class GameLoop:
             if self.is_moving():
                 self.check_star_collision()
                 self.move_ball()
-                
 
             self.draw_display()
             self.clock.clock_tick(60)
@@ -85,14 +84,14 @@ class GameLoop:
             if not self.ball.move_left():
                 self.left = False
 
-        if self.jump:    
+        if self.jump:
             if not self.ball.jump():
                 self.jump = False
 
     def check_star_collision(self):
         star_hit = pygame.sprite.spritecollide(self.ball,self.stars,True)
         if star_hit:
-            star_hit[0].kill()    
+            star_hit[0].kill()
             self.collected_stars += 1
             if self.collected_stars == 1:
                 self.stars.add(Star(self.window.width/3,self.window.height-self.window.margin-150))
@@ -109,7 +108,7 @@ class GameLoop:
         pygame.display.flip()
 
 if __name__ == "__main__":
-    window = GameWindow()
-    clock = Clock()
-    game = GameLoop(window, clock)
+    gwindow = GameWindow()
+    gclock = Clock()
+    game = GameLoop(gwindow, gclock)
     game.loop()

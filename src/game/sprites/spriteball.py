@@ -59,7 +59,6 @@ class Ball (pygame.sprite.Sprite):
                 self.rect.y = hit[0].rect.top - self.ball_radius*2
                 self.vertical = 0
                 self.current_pl = hit[0]
-                self.down = False
         if self.rect.bottom < self.current_pl.rect.top - self.max_jumpheight:
             self.vertical = -10
         self.rect.y -= self.vertical
