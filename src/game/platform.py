@@ -2,7 +2,7 @@ import pygame
 
 BLACK = (0,0,0)
 
-class Platform (pygame.sprite.Sprite):
+class Platform(pygame.sprite.Sprite):
     def __init__(self, x, y, height, width):
         super().__init__()
 

@@ -1,27 +1,49 @@
 import pygame
 
 from clock import Clock
-#from map import Platform
+from gamewindow import GameWindow
+from spriteball import Ball
+from platform import Platform
+from star import Star
 
 WHITE = (255,255,255)
 BLACK = (0,0,0)
 
 class GameLoop:
-    def __init__(self, game, ball):
-        self.game = game
-        self.ball = ball
+    def __init__(self):
+        self.window = GameWindow()
         self.right = False
         self.left = False
-        self.up = False
-        self.down = False
+        #self.down = False
+        self.jump = False
         self.clock = Clock()
+
+        self.all_sprites = pygame.sprite.Group()
+        self.platforms = pygame.sprite.Group()
+        self.stars = pygame.sprite.Group()
+        self.collected_stars = 0
+        self.init_sprites()
+
+    def init_sprites(self):
+        pl1 = Platform(self.window.width/2+20,
+                self.window.height - self.window.margin - 100, 20, 100)
+        pl2 = Platform(self.window.margin+2,
+                self.window.height - self.window.margin-5, 5,
+                self.window.width-2*self.window.margin)
+        self.ball = Ball(20,self.window.height,self.window.width,self.window.margin,self,pl2)
+        self.stars.add(Star(self.window.width/2+70,self.window.height - self.window.margin - 230))
+        #self.stars.add(Star(self.window.width/3,self.window.height-self.window.margin-150))
+        self.platforms.add(pl1,pl2)
+        self.all_sprites.add(self.platforms, self.stars)
 
     def loop(self):
         # start = self.clock.clock_get_ticks()
         while True:
             self.next_event()
             if self.is_moving():
+                self.check_star_collision()
                 self.move_ball()
+                
 
             self.draw_display()
             self.clock.clock_tick(60)
@@ -38,9 +60,8 @@ class GameLoop:
                     self.left = True
                 if event.key == pygame.K_RIGHT:
                     self.right = True
-                if event.key == pygame.K_SPACE and self.up is False:
-                    if self.down is False:
-                        self.up = True
+                if event.key == pygame.K_SPACE and self.jump is False:
+                    self.jump = True
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_LEFT:
                     self.left = False
@@ -50,8 +71,7 @@ class GameLoop:
     def is_moving(self):
         moves = [self.left,
                 self.right,
-                self.up,
-                self.down]
+                self.jump]
 
         if True in moves:
             return True
@@ -66,20 +86,29 @@ class GameLoop:
             if not self.ball.move_left():
                 self.left = False
 
-        if self.up:
-            if not self.ball.move_up():
-                self.up = False
-                self.down = True
+        if self.jump:    
+            if not self.ball.jump():
+                self.jump = False
 
-        if self.down:
-            if not self.ball.move_down():
-                self.down = False
-
+    def check_star_collision(self):
+        star_hit = pygame.sprite.spritecollide(self.ball,self.stars,True)
+        if star_hit:
+            star_hit[0].kill()    
+            self.collected_stars += 1
+            if self.collected_stars == 1:
+                self.stars.add(Star(self.window.width/3,self.window.height-self.window.margin-150))
+                self.all_sprites.add(self.stars)
+            print(f"tähtiä kerätty: {self.collected_stars}")
 
     def draw_display(self):
-        self.game.display.fill(WHITE)
-        pygame.draw.rect(self.game.display, BLACK, (self.game.margin,self.game.margin
-                        ,self.game.width-2*self.game.margin, self.game.height-2*self.game.margin),2)
-        self.ball.draw_ball(self.game.display)
-        #self.game.draw_sprites()
+        self.ball.update()
+        self.check_star_collision()
+        self.all_sprites.update()
+        self.window.draw()
+        self.all_sprites.draw(self.window.display)
+        self.ball.draw(self.window.display)
         pygame.display.flip()
+
+if __name__ == "__main__":
+    game = GameLoop()
+    game.loop()
