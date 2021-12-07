@@ -10,13 +10,12 @@ WHITE = (255,255,255)
 BLACK = (0,0,0)
 
 class GameLoop:
-    def __init__(self):
-        self.window = GameWindow()
+    def __init__(self, window, clock):
+        self.window = window # GameWindow()
         self.right = False
         self.left = False
-        #self.down = False
         self.jump = False
-        self.clock = Clock()
+        self.clock = clock # Clock()
 
         self.all_sprites = pygame.sprite.Group()
         self.platforms = pygame.sprite.Group()
@@ -110,5 +109,7 @@ class GameLoop:
         pygame.display.flip()
 
 if __name__ == "__main__":
-    game = GameLoop()
+    window = GameWindow()
+    clock = Clock()
+    game = GameLoop(window, clock)
     game.loop()
