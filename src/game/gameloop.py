@@ -2,9 +2,9 @@ import pygame
 
 from clock import Clock
 from gamewindow import GameWindow
-from spriteball import Ball
-from platform import Platform
-from star import Star
+from sprites.spriteball import Ball
+from sprites.platform import Platform
+from sprites.star import Star
 
 WHITE = (255,255,255)
 BLACK = (0,0,0)
