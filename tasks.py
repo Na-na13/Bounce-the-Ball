@@ -2,7 +2,7 @@ from invoke import task
 
 @task
 def start(ctx):
-    ctx.run("python src/game/gamewindow.py")
+    ctx.run("python src/game/index.py")
 
 @task
 def pylint(ctx):

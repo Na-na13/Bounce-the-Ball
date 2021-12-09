@@ -1,7 +1,7 @@
 import pygame
 
-from clock import Clock
-from gamewindow import GameWindow
+#from clock import Clock
+#from gamewindow import GameWindow
 from sprites.spriteball import Ball
 from sprites.platform import Platform
 from sprites.star import Star
@@ -107,8 +107,8 @@ class GameLoop:
         self.ball.draw(self.window.display)
         pygame.display.flip()
 
-if __name__ == "__main__":
-    gwindow = GameWindow()
-    gclock = Clock()
-    game = GameLoop(gwindow, gclock)
-    game.loop()
+#if __name__ == "__main__":
+#    gwindow = GameWindow()
+#    gclock = Clock()
+#    game = GameLoop(gwindow, gclock)
+#    game.loop()
