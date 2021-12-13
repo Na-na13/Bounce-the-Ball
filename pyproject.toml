@@ -8,6 +8,7 @@ authors = ["Nana Reinikainen <nana.reinikainen@helsinki.fi>"]
 python = "^3.8"
 invoke = "^1.6.0"
 pygame = "^2.1.0"
+pygame-gui = "^0.5.7"
 
 [tool.poetry.dev-dependencies]
 pylint = "^2.12.1"

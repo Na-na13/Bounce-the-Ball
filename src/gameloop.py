@@ -1,10 +1,9 @@
 import pygame
 
-#from clock import Clock
-#from gamewindow import GameWindow
 from sprites.spriteball import Ball
 from sprites.platform import Platform
 from sprites.star import Star
+from ui.end import End
 
 WHITE = (255,255,255)
 BLACK = (0,0,0)
@@ -12,10 +11,11 @@ BLACK = (0,0,0)
 class GameLoop:
     def __init__(self, window, clock):
         self.window = window
+        self.clock = clock
         self.right = False
         self.left = False
         self.jump = False
-        self.clock = clock
+        self.gameover = False
 
         self.all_sprites = pygame.sprite.Group()
         self.platforms = pygame.sprite.Group()
@@ -37,7 +37,7 @@ class GameLoop:
 
     def loop(self):
         # start = self.clock.clock_get_ticks()
-        while True:
+        while not self.gameover:
             self.next_event()
             if self.is_moving():
                 self.check_star_collision()
@@ -45,15 +45,16 @@ class GameLoop:
 
             self.draw_display()
             self.clock.clock_tick(60)
+        end = End()
+        end.run()
 
     def next_event(self):
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                exit()
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_ESCAPE:
-                    pygame.quit()
-                    exit()
+            #    if event.key == pygame.K_ESCAPE:
+            #        self.gameover = True
+            #        pygame.quit()
+                    #exit()
                 if event.key == pygame.K_LEFT:
                     self.left = True
                 if event.key == pygame.K_RIGHT:
@@ -97,6 +98,8 @@ class GameLoop:
                 self.stars.add(Star(self.window.width/3,self.window.height-self.window.margin-150))
                 self.all_sprites.add(self.stars)
             print(f"tähtiä kerätty: {self.collected_stars}")
+            if self.collected_stars == 2:
+                self.gameover = True
 
     def draw_display(self):
         self.ball.update()
@@ -106,9 +109,3 @@ class GameLoop:
         self.all_sprites.draw(self.window.display)
         self.ball.draw(self.window.display)
         pygame.display.flip()
-
-#if __name__ == "__main__":
-#    gwindow = GameWindow()
-#    gclock = Clock()
-#    game = GameLoop(gwindow, gclock)
-#    game.loop()
