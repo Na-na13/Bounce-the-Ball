@@ -1,6 +1,6 @@
 import unittest
 
-from game.clock import Clock
+from clock import Clock
 
 class TestClock(unittest.TestCase):
     def setUp(self):
