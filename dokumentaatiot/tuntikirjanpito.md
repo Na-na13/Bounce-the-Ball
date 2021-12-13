@@ -10,4 +10,6 @@ pvm    | aika | tehtävät
 5.12.|6 h|tutustuminen Pygamen Sprite-moduliin
 6.12.|8 h|pallon muuttaminen sprite-olioksi, tasojen ja tähtien luonti, peliin lisätty toimintoja
 7.12|5 h|testien koodaamista, koodin laadun parantelua
-yht.|37 h|
+12.12|8 h|tutustumista Tkinter-moduliin, yritetty sovittaa toimimaan Pygamen kanssa, todettu huonoksi valinnaksi
+13.12|8 h|tutustumista Pygame_gui-moduliin, koodattu käyttöliittymä, testikattavuutta parannettu
+yht.|53 h|
