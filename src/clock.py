@@ -11,4 +11,4 @@ class Clock:
         return pygame.time.get_ticks()
 
     def clock_reset(self):
-       pass
+        pass

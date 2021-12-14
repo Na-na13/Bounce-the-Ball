@@ -41,8 +41,8 @@ class Ball (pygame.sprite.Sprite):
 
     def move_right(self):
         """Tarkistaa, onko pallon liikkuminen oikealle sallittua.
-            Liikkuminen rajoitettu peli-ikkunaan. 
-            Jos pallo liikkuu tason oikein reunan yli, pallon liike muutetaan 
+            Liikkuminen rajoitettu peli-ikkunaan.
+            Jos pallo liikkuu tason oikein reunan yli, pallon liike muutetaan
             alaspäin suuntautuvaksi.
 
         Returns:
@@ -57,8 +57,8 @@ class Ball (pygame.sprite.Sprite):
 
     def move_left(self):
         """Tarkistaa, onko pallon liikkuminen vasemmalle sallittua.
-            Liikkuminen rajoitettu peli-ikkunaan. 
-            Jos pallo liikkuu tason vasemman reunan yli, pallon liike muutetaan 
+            Liikkuminen rajoitettu peli-ikkunaan.
+            Jos pallo liikkuu tason vasemman reunan yli, pallon liike muutetaan
             alaspäin suuntautuvaksi.
 
         Returns:

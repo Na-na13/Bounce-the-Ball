@@ -41,10 +41,11 @@ class Start:
                                                     self.gamewindow.width/2-100,
                                                     self.gamewindow.height/2-80,
                                                     200, 240),
-                                                    html_text= "<b>Instructions</b>"
-                                                    "<br>Move ball with ARROW keys and jump with SPACE bar."
-                                                    "<br>Collect STARS to get points."
-                                                    "<br>Get to GOAL as fast as you can.",
+                                                    html_text=
+                                            "<b>Instructions</b>"
+                                            "<br>Move ball with ARROW keys and jump with SPACE bar."
+                                            "<br>Collect STARS to get points."
+                                            "<br>Get to GOAL as fast as you can.",
                                                     manager=self.manager,
                                                     visible=False)
         self.return_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(
