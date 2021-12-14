@@ -31,6 +31,6 @@ Jos tasanteelta tippuu liian pitkän matkan alaspäin, pallo puhkeaa ja joutuu a
 - [ ] pistelaskuri
 - [ ] ajanotto
 - [ ] maaliin pääseminen
-- [ ] aloitusikkuna
-- [ ] lopetusikkuna
+- [x] aloitusikkuna
+- [x] lopetusikkuna
 - [ ] high score -lista
