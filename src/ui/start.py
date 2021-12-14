@@ -2,16 +2,14 @@ import sys
 import pygame
 import pygame_gui
 
-from gamewindow import GameWindow
-from clock import Clock
 from gameloop import GameLoop
 
 class Start:
-    def __init__(self):
+    def __init__(self,window,clock):
         pygame.init()
 
-        self.gamewindow = GameWindow()
-        self.gameclock = Clock()
+        self.gamewindow = window
+        self.gameclock = clock
         self.background = pygame.Surface((self.gamewindow.width, self.gamewindow.height))
         self.manager = pygame_gui.UIManager((self.gamewindow.width, self.gamewindow.height))
         self.play_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(
@@ -39,7 +37,6 @@ class Start:
                                                         200, 40),
                                                         text="Quit",
                                                         manager=self.manager)
-
         self.inst_text = pygame_gui.elements.UITextBox(relative_rect=pygame.Rect(
                                                     self.gamewindow.width/2-100,
                                                     self.gamewindow.height/2-80,
@@ -50,7 +47,6 @@ class Start:
                                                     "<br>Get to GOAL as fast as you can.",
                                                     manager=self.manager,
                                                     visible=False)
-
         self.return_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(
                                                         self.gamewindow.width/2-100,
                                                         self.gamewindow.height/2+155,
@@ -62,10 +58,8 @@ class Start:
     def run(self):
         is_running = True
         clock = pygame.time.Clock()
-
         while is_running:
             time_delta = clock.tick(60)/1000.0
-
             for event in pygame.event.get():
                 if event.type == pygame.USEREVENT:
                     if event.user_type == pygame_gui.UI_BUTTON_PRESSED:

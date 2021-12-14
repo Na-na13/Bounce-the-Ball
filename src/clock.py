@@ -9,3 +9,6 @@ class Clock:
 
     def clock_get_ticks(self):
         return pygame.time.get_ticks()
+
+    def clock_reset(self):
+       pass
