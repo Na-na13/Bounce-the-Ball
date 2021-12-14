@@ -8,7 +8,7 @@ Bounce the Ball on yksinkertainen hyppelypeli, jossa pallolla kerätään 10 pel
 [Arkkitehtuuri](https://github.com/Na-na13/Bounce-the-Ball/blob/master/dokumentaatiot/arkkitehtuuri.md)
   
 ## Julkaistut versiot
-[Viikon 5 versio](https://github.com/Na-na13/Bounce-the-Ball/releases/tag/viikko5)
+[Viikon 5 versio](https://github.com/Na-na13/Bounce-the-Ball/releases/tag/viikko5)  
 [Viikko 6 versio](https://github.com/Na-na13/Bounce-the-Ball/releases/tag/viikko6)
     
 ## Pelin käynnistäminen
