@@ -15,7 +15,7 @@ class Star (pygame.sprite.Sprite):
             y (int): tähden vasemman yläkulman y-koordinaatti
         """
         super().__init__()
-        self.image = pygame.image.load(os.path.join(img_folder, "star.png")).convert_alpha()
+        self.image = pygame.image.load(os.path.join(img_folder, "star2.png")).convert_alpha()
         #self.image.set_colorkey(BLACK)
         self.rect = self.image.get_rect()
         self.rect.x = x

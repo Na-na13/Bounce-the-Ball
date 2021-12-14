@@ -12,6 +12,7 @@ class Start:
         self.gameclock = clock
         self.background = pygame.Surface((self.gamewindow.width, self.gamewindow.height))
         self.manager = pygame_gui.UIManager((self.gamewindow.width, self.gamewindow.height))
+
         self.play_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(
                                                         self.gamewindow.width/2-100,
                                                         self.gamewindow.height/2-20,
@@ -28,7 +29,7 @@ class Start:
                                                         self.gamewindow.width/2-100,
                                                         self.gamewindow.height/2+70,
                                                         200, 40),
-                                                        text="High Score List",
+                                                        text="Best times",
                                                         manager=self.manager)
 
         self.quit_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(
@@ -39,18 +40,18 @@ class Start:
                                                         manager=self.manager)
         self.inst_text = pygame_gui.elements.UITextBox(relative_rect=pygame.Rect(
                                                     self.gamewindow.width/2-100,
-                                                    self.gamewindow.height/2-80,
-                                                    200, 240),
+                                                    self.gamewindow.height/2-40,
+                                                    200, 195),
                                                     html_text=
                                             "<b>Instructions</b>"
                                             "<br>Move ball with ARROW keys and jump with SPACE bar."
-                                            "<br>Collect STARS to get points."
-                                            "<br>Get to GOAL as fast as you can.",
+                                            "<br>Collect 10 STARS as fast as you can."
+                                            "<br>Press ESC to start new game.",
                                                     manager=self.manager,
                                                     visible=False)
         self.return_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(
                                                         self.gamewindow.width/2-100,
-                                                        self.gamewindow.height/2+155,
+                                                        self.gamewindow.height/2+160,
                                                         200, 40),
                                                         text="Return",
                                                         manager=self.manager,
@@ -74,9 +75,17 @@ class Start:
                         if event.ui_element == self.inst_button:
                             self.inst_text.visible = True
                             self.return_button.visible = True
+                            self.play_button.disable()
+                            self.score_button.disable()
+                            self.inst_button.disable()
+                            self.quit_button.disable()
                         if event.ui_element == self.return_button:
                             self.inst_text.visible = False
                             self.return_button.visible = False
+                            self.play_button.enable()
+                            self.score_button.enable()
+                            self.inst_button.enable()
+                            self.quit_button.enable()
 
                 self.manager.process_events(event)
 

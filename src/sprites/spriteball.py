@@ -92,7 +92,7 @@ class Ball (pygame.sprite.Sprite):
             olevaan tasoon, liike muutetaan alaspäin suuntautuvaksi. Jos pallo
             osuu ylhäältäpäin alapuolella olevaan tasoon, pallo jää tason päälle.
             Jos saavutetaan maksimi hyppykorkeuden, liike muutetaan alaspäin
-            suuntautuvaksi.
+            suuntautuvaksi. Pallo ei voi hypätä peli-ikkunan ulkopuolelle.
             (Bugi: joissakin tapauksissa pallo voi hypätä yläpuolelta tason läpi)
         """
         hit = pygame.sprite.spritecollide(self, self.game.platforms, False)
@@ -103,6 +103,8 @@ class Ball (pygame.sprite.Sprite):
                 self.rect.y = hit[0].rect.top - self.ball_radius*2
                 self.vertical = 0
                 self.current_pl = hit[0]
+        if self.rect.top <= self.margin+2:
+            self.vertical = -10
         if self.rect.bottom < self.current_pl.rect.top - self.max_jumpheight:
             self.vertical = -10
         self.rect.y -= self.vertical
