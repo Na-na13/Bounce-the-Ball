@@ -1,6 +1,7 @@
+import sys
+from random import randint
 import pygame
 
-from random import randint
 from sprites.spriteball import Ball
 from sprites.platform import Platform
 from sprites.star import Star
@@ -56,7 +57,9 @@ class GameLoop:
         self.all_sprites.add(self.platforms, self.stars)
 
     def new_game(self):
-        #self.clock.timer_reset()
+        """Uuden pelin alustaminen, muuttujat asetetaan alkutilaan, sprite.Groupit
+            tyhjennetään, spritet alustetaan uudelleen ja pelisilmukka aloitetaan.
+        """
         self.right = False
         self.left = False
         self.jump = False
@@ -74,17 +77,15 @@ class GameLoop:
         """Varsinainen pelisilmukka, joka pyörittää peliä. Kun muuttujan self.gameover
             arvoksi asetetaan False, pelisilmukka pysähtyy ja siirrytään lopetusikkunaan.
         """
-        start = self.clock.get_time()
+        start = self.clock.clock_get_ticks()
         while not self.gameover:
             self.next_event()
-            if self.is_moving():
-                self.check_star_collision()
-                self.move_ball()
-
+            self.move_ball()
+            self.check_star_collision()
             self.draw_display()
             self.clock.clock_tick(60)
-        time = self.clock.get_time() - start
-        print(time)
+
+        time = (self.clock.clock_get_ticks() - start)/1000
         end = End(self, time)
         end.run()
 
@@ -95,9 +96,9 @@ class GameLoop:
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     self.gameover = True
-                    #pygame.quit()
-                    #exit()
                     self.new_game()
+                if event.key == pygame.K_q:
+                    sys.exit()
                 if event.key == pygame.K_LEFT:
                     self.left = True
                 if event.key == pygame.K_RIGHT:
@@ -109,20 +110,6 @@ class GameLoop:
                     self.left = False
                 if event.key == pygame.K_RIGHT:
                     self.right = False
-
-    def is_moving(self):
-        """Tarkistaa, onko pallo asetettu liikkumaan.
-
-        Returns:
-            boolean: True, jos pallo on asetettu liikkumaan, False, jos ei
-        """
-        moves = [self.left,
-                self.right,
-                self.jump]
-
-        if True in moves:
-            return True
-        return False
 
     def move_ball(self):
         if self.right:
@@ -139,13 +126,13 @@ class GameLoop:
 
     def check_star_collision(self):
         """Tarkistaa tähtien keräämisen. Jos pallo osuu tähteen, tähti katoaa
-            ja laskuri kasvaa yhdellä (jos laskurissa on kaksi tähteä, peli päättyy).
+            ja uusi tähti generoidaan satunnaiseen paikkaan pelialueella.
+            Laskuri kasvaa yhdellä (jos laskurissa on yksi tähti, peli päättyy).
         """
         star_hit = pygame.sprite.spritecollide(self.ball,self.stars,True)
         if star_hit:
             star_hit[0].kill()
             self.collected_stars += 1
-            # luo tähti johonkin satunnaiseen kohtaan peli-ikkunaa
             while True:
                 x = randint(self.window.margin + 20, self.window.width - self.window.margin -20)
                 y = randint(self.window.margin + 20, self.window.height - self.window.margin -20)
@@ -157,10 +144,7 @@ class GameLoop:
                     star.kill()
                     continue
                 break
-            #if self.collected_stars == 1:
-            #    self.stars.add(Star(self.window.width/5,self.window.height-self.window.margin-150))
-            #    self.all_sprites.add(self.stars)
-            if self.collected_stars == 1:
+            if self.collected_stars == 3:
                 self.gameover = True
 
     def draw_display(self):

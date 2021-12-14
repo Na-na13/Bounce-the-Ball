@@ -1,10 +1,8 @@
 import unittest
 import pygame
-from gamewindow import GameWindow
+
 from sprites.spriteball import Ball
 from sprites.platform import Platform
-from gameloop import GameLoop
-#from game.clock import Clock
 
 class StubClock:
     def clock_tick(self,fps):
@@ -29,7 +27,7 @@ class TestBall(unittest.TestCase):
         self.pl3 = Platform(100,50,5,50)
 
         self.testgame = StubGameLoop(self.pl1,self.pl1)
-        self.testball3 = Ball(20, 200, 200, 10, self.testgame, self.pl1)
+        self.testball3 = Ball(20, 200, 200, -115, self.testgame, self.pl1)
 
         self.testgame2 = StubGameLoop(self.pl3, self.pl2)
         self.testball4 = Ball(20, 200, 200, 10, self.testgame2, self.pl3)

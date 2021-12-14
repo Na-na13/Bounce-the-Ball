@@ -22,7 +22,8 @@ class End:
                                                 (240, 93)),
                                                 html_text= "<b>Well played!</b>"
                                                 "<br><b>Your time: {time} sec!</b>"
-                                                "<br>Write your name below to SAVE your TIME.".format(time=self.time),
+                                                "<br>Write your name below to SAVE your TIME."
+                                                .format(time=self.time),
                                                 manager=self.manager,
                                                 container=self.save_panel)
         self.nick_entry = pygame_gui.elements.UITextEntryLine(relative_rect=pygame.Rect(
@@ -54,13 +55,6 @@ class End:
                                                         200, 40),
                                                         text="Quit",
                                                         manager=self.manager)
-        #self.save_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(
-        #                                                self.gamewindow.width/2-100,
-        #                                                self.gamewindow.height/2+155,
-        #                                                200, 40),
-        #                                                text="Save",
-        #                                                manager=self.manager,
-        #                                                container=self.save_panel)
 
     def run(self):
         is_running = True

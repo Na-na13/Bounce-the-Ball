@@ -46,7 +46,8 @@ class Start:
                                             "<b>Instructions</b>"
                                             "<br>Move ball with ARROW keys and jump with SPACE bar."
                                             "<br>Collect 10 STARS as fast as you can."
-                                            "<br>Press ESC to start new game.",
+                                            "<br>Press ESC to start new game."
+                                            "<br>Press Q to exit game.",
                                                     manager=self.manager,
                                                     visible=False)
         self.return_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(

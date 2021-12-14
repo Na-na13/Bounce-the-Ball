@@ -1,8 +1,6 @@
 import os
 import pygame
 
-
-BLACK = (0,0,0)
 game_folder = os.path.split(os.path.dirname(__file__))[0]
 img_folder = os.path.join(game_folder,"img")
 
@@ -16,7 +14,6 @@ class Star (pygame.sprite.Sprite):
         """
         super().__init__()
         self.image = pygame.image.load(os.path.join(img_folder, "star2.png")).convert_alpha()
-        #self.image.set_colorkey(BLACK)
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
