@@ -1,9 +1,10 @@
 # Bounce the Ball (ohjelmistotekniikka, harjoitustyö)  
-Bounce the Ball on yksinkertainen tasohyppelypeli, jossa liikutetaan palloa läpi pelikentän kohti maalia keräten matkalla tähtiä, joista saa pisteitä
+Bounce the Ball on yksinkertainen hyppelypeli, jossa pallolla kerätään 10 pelikentälle satunnaisesti generoituihin paikkoihin ilmestyvää tähteä mahdollisimman nopeasti.
   
 ## Dokumentaatiot
 [Tuntikirjanpito](https://github.com/Na-na13/Bounce-the-Ball/blob/master/dokumentaatiot/tuntikirjanpito.md)  
 [Määrittelydokumentti](https://github.com/Na-na13/Bounce-the-Ball/blob/master/dokumentaatiot/maarittelydokumentti.md)  
+[Käyttöohje](https://github.com/Na-na13/Bounce-the-Ball/blob/master/dokumentaatiot/kayttoohje.md)  
 [Arkkitehtuuri](https://github.com/Na-na13/Bounce-the-Ball/blob/master/dokumentaatiot/arkkitehtuuri.md)
   
 ## Julkaistut versiot
@@ -26,9 +27,8 @@ poetry run invoke test
 ```
 Testikattavuus:
 ```bash
-poetry run invoke coverage_report
+poetry run invoke coverage-report
 ```
-
 Koodin laadun tarkistus:
 ```bash
 poetry run invoke pylint
