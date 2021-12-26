@@ -13,4 +13,6 @@ pvm    | aika | tehtävät
 12.12.|8 h|tutustumista Tkinter-moduliin, yritetty sovittaa toimimaan Pygamen kanssa, todettu huonoksi valinnaksi
 13.12.|8 h|tutustumista Pygame_gui-moduliin, koodattu käyttöliittymä, testikattavuutta parannettu
 14.12.|8 h|käyttöohjeen kirjoittaminen, peliä muokattu paremmin pelattavaksi kokonaisuutena
-yht.|59 h|
+25.12.|2 h|High score -listan toteuttaminen ja lisääminen peliin
+26.12.|2 h|Eilistä jatkettu
+yht.|63 h|
