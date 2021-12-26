@@ -2,8 +2,18 @@ import sys
 import pygame
 import pygame_gui
 
+from settings import *
+
 class End:
     def __init__(self,game,time):
+        """Pelin lopetusvalikko, jossa pystyy tallettamaan
+            peliajan, jos se on tarpeeksi hyvä, aloittamaan
+            uuden pelin tai lopettamaan pelaamisen
+
+        Args:
+            game (game): Peli-olio, jolla peliä pelattiin
+            time (clock): Peliin käytetty aika
+        """
         pygame.init()
 
         self.game = game
@@ -30,7 +40,7 @@ class End:
                                                     manager=self.manager,
                                                     visible=False,
                                                     container=self.save_panel)
-        self.nick_entry.set_text_length_limit(9)
+        self.nick_entry.set_text_length_limit(NAMELENGTH)
         self.text = pygame_gui.elements.UITextBox(relative_rect=pygame.Rect(
                                                 (2, 0),
                                                 (240, 93)),
@@ -40,24 +50,21 @@ class End:
         self.newgame_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(
                                                         self.gamewindow.width/2-100,
                                                         self.gamewindow.height/2+115,
-                                                        200, 40),
+                                                        BUTTONW, BUTTONH),
                                                         text="New Game",
                                                         manager=self.manager)
         self.quit_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(
                                                         self.gamewindow.width/2-100,
                                                         self.gamewindow.height/2+160,
-                                                        200, 40),
+                                                        BUTTONW, BUTTONH),
                                                         text="Quit",
                                                         manager=self.manager)
-        self.score_list = pygame_gui.elements.UITextBox(relative_rect=pygame.Rect(
-                                                    self.gamewindow.width/2-100,
-                                                    self.gamewindow.height/2-115,
-                                                    200, 225),
-                                                    html_text= "<b>Text</b>",
-                                                    manager=self.manager,
-                                                    visible=False)
 
     def run(self):
+        """Pelivalikkoa pyörittävä silmukka, joka suorittaa
+           pelaajan valikkonappien painamiset ja niistä
+           seuraavat tapahtumat.
+        """
         is_running = True
         clock = pygame.time.Clock()
         while is_running:
@@ -85,26 +92,34 @@ class End:
             pygame.display.update()
 
     def save(self, name, gametime):
+        """Tallettaa pelaajan nimen ja peliajan 'Best Times'
+            -listaan, jos peliaika on tarpeeksi hyvä eli
+            parempi kuin listan viimeinen, jolloin listan
+            viimeinen talletus poistetaan.
+
+        Args:
+            name (string): pelaajan nimi
+            gametime (string): käytetty peliaika
+        """
         scores = []
         with open("high_score.txt","r") as file:
             for line in file:
-                if "\n" in line or line == "":
+                if line in ("\n", ""):
                     continue
                 parts = line.split(";")
-                nick = str(parts[0])
+                nick = parts[0]
                 time = float(parts[1])
                 scores.append((nick,time))
-        if float(gametime) < float(scores[-1][1]):
+        if float(gametime) < scores[-1][1]:
             scores.remove(scores[-1])
             scores.append((name,float(gametime)))
             scores.sort(key=lambda x:x[1])
             with open("high_score.txt","w") as file:
                 for i in range(0,len(scores)):
-                    file.write(f"{str(scores[i][0])};{float(scores[i][1])}\n")
+                    file.write(f"{scores[i][0]};{scores[i][1]}\n")
         self.save_panel.kill()
         scorelist = "<b>Best Times</b>"
         i = 1
-
         for score in scores:
             scorelist = scorelist + f"<br><b>{i}: </b>{score[0]}: {score[1]}"
             i += 1
@@ -116,17 +131,28 @@ class End:
                                             manager=self.manager,)
 
     def get_text(self,playtime):
+        """Hakee tekstin pelaajalle näytettävään ruutuun.
+            Valitaan sen mukaan, miten nopeasti peli on pelattu:
+            1. Jos aika parempi kuin listan viimeinen aika, kerrotaan
+            pelaajalle mahdollisuudesta tallettaa aika listalle.
+            2. Jos aika on huonompi, talletusmahdollisuutta ei anneta.
+
+        Args:
+            playtime (string): käytetty peliaika
+
+        Returns:
+            [string]: pelaajalle näytettävä teksti.
+        """
         scores = []
         with open("high_score.txt","r") as file:
             for line in file:
-                if line == "\n" or line == "":
+                if line in ("\n", ""):
                     continue
                 parts = line.split(";")
-                nick = str(parts[0])
-                time = parts[1]
+                nick = parts[0]
+                time = float(parts[1])
                 scores.append((nick,time))
-
-        if playtime < scores[-1][1]:
+        if float(playtime) < scores[-1][1]:
             self.save_button.visible = True
             self.nick_entry.visible = True
             txt = f"<b>Well played!</b><br><b>Your time: {playtime} sec!</b><br>Write your name below to SAVE your TIME."

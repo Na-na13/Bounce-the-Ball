@@ -1,6 +1,6 @@
 import pygame
 
-BLACK = (0,0,0)
+from settings import *
 
 class Platform(pygame.sprite.Sprite):
     def __init__(self, x, y, height, width):

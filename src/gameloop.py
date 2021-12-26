@@ -2,13 +2,11 @@ import sys
 from random import randint
 import pygame
 
+from settings import *
 from sprites.spriteball import Ball
 from sprites.platform import Platform
 from sprites.star import Star
 from ui.end import End
-
-WHITE = (255,255,255)
-BLACK = (0,0,0)
 
 class GameLoop:
     def __init__(self, window, clock):
@@ -35,11 +33,11 @@ class GameLoop:
         """Kaikkien pelin sprite-olioiden alustus:
             tasot, tähdet, pallo
         """
-        pl1 = Platform(self.window.width/2+20,
-                    self.window.height - self.window.margin - 100, 20, 100)
-        pl2 = Platform(self.window.margin+2,
-                self.window.height - self.window.margin-5, 5,
-                self.window.width-2*self.window.margin)
+        pl1 = Platform(self.window.width / 2 + 20,
+                    self.window.height - MARGIN - 100, 20, 100)
+        pl2 = Platform(MARGIN + LINE,
+                self.window.height - MARGIN - 5, 5,
+                self.window.width - 2 * MARGIN)
         pl3 = Platform(pl1.rect.topleft[0]-210, pl1.rect.topleft[1]-100, 20, 200)
         pl4 = Platform(pl3.rect.topleft[0]-250, pl3.rect.topleft[1]-100, 20, 200)
         pl5 = Platform(pl4.rect.topright[0]+60, pl4.rect.topright[1]-120, 20, 100)
@@ -51,9 +49,10 @@ class GameLoop:
         pl11 = Platform(pl10.rect.bottomright[0]+60, pl10.rect.bottomright[1]+100,20,80)
         pl12 = Platform(pl6.rect.topleft[0]-160, pl6.rect.topleft[1]-120, 20, 200)
         pl13 = Platform(pl12.rect.topright[0]+60,pl12.rect.topright[1]-120, 20, 200)
-        self.ball = Ball(20,self.window.height,self.window.width,self.window.margin,self,pl2)
-        self.stars.add(Star(self.window.width/2+70,self.window.height - self.window.margin - 230))
-        self.platforms.add(pl1,pl2,pl3,pl4,pl5,pl6,pl7,pl8,pl9,pl10,pl11,pl12,pl13)
+        self.ball = Ball(self.window.height, self.window.width, self, pl2)
+        self.stars.add(Star(self.window.width / 2 + 70, self.window.height - MARGIN - 230))
+        self.platforms.add(pl1, pl2, pl3, pl4, pl5, pl6, pl7,
+                            pl8, pl9, pl10, pl11, pl12, pl13)
         self.all_sprites.add(self.platforms, self.stars)
 
     def new_game(self):
@@ -112,6 +111,8 @@ class GameLoop:
                     self.right = False
 
     def move_ball(self):
+        """Liikuttaa palloa, jos se on sallittua
+        """
         if self.right:
             if not self.ball.move_right():
                 self.right = False
@@ -127,19 +128,19 @@ class GameLoop:
     def check_star_collision(self):
         """Tarkistaa tähtien keräämisen. Jos pallo osuu tähteen, tähti katoaa
             ja uusi tähti generoidaan satunnaiseen paikkaan pelialueella.
-            Laskuri kasvaa yhdellä (jos laskurissa on yksi tähti, peli päättyy).
+            Laskuri kasvaa yhdellä (jos laskurissa on seitsemän tähti, peli päättyy).
         """
-        star_hit = pygame.sprite.spritecollide(self.ball,self.stars,True)
+        star_hit = pygame.sprite.spritecollide(self.ball, self.stars, True)
         if star_hit:
             star_hit[0].kill()
             self.collected_stars += 1
             while True:
-                x = randint(self.window.margin + 20, self.window.width - self.window.margin -20)
-                y = randint(self.window.margin + 20, self.window.height - self.window.margin -20)
+                x = randint(MARGIN + STARW, self.window.width - MARGIN - STARW)
+                y = randint(MARGIN + STARH, self.window.height - MARGIN -STARH)
                 star = Star(x,y)
                 self.stars.add(star)
                 self.all_sprites.add(star)
-                hit = pygame.sprite.spritecollide(star,self.platforms,False)
+                hit = pygame.sprite.spritecollide(star, self.platforms, False)
                 if hit:
                     star.kill()
                     continue

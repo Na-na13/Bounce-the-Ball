@@ -3,9 +3,18 @@ import pygame
 import pygame_gui
 
 from gameloop import GameLoop
+from settings import *
 
 class Start:
     def __init__(self,window,clock):
+        """Pelin aloitusvalikko, jossa pystyy aloittamaan pelaamisen,
+            katsomaan pelin ohjeistuksen, katsomaan 'Best Times'-listaa
+            tai lopettamaan pelaamisen.
+
+        Args:
+            window (gamewindow): peli-ikkuna
+            clock (clock): pelikello
+        """
         pygame.init()
 
         self.gamewindow = window
@@ -16,38 +25,38 @@ class Start:
         self.play_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(
                                                         self.gamewindow.width/2-100,
                                                         self.gamewindow.height/2-20,
-                                                        200, 40),
+                                                        BUTTONW, BUTTONH),
                                                         text="Play",
                                                         manager=self.manager)
         self.inst_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(
                                                         self.gamewindow.width/2-100,
                                                         self.gamewindow.height/2+25,
-                                                        200, 40),
+                                                        BUTTONW, BUTTONH),
                                                         text="Instructions",
                                                         manager=self.manager)
         self.score_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(
                                                         self.gamewindow.width/2-100,
                                                         self.gamewindow.height/2+70,
-                                                        200, 40),
+                                                        BUTTONW, BUTTONH),
                                                         text="Best times",
                                                         manager=self.manager)
         self.return_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(
                                                         self.gamewindow.width/2-100,
                                                         self.gamewindow.height/2+160,
-                                                        200, 40),
+                                                        BUTTONW, BUTTONH),
                                                         text="Return",
                                                         manager=self.manager,
                                                         visible=False)
         self.quit_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(
                                                         self.gamewindow.width/2-100,
                                                         self.gamewindow.height/2+115,
-                                                        200, 40),
+                                                        BUTTONW, BUTTONH),
                                                         text="Quit",
                                                         manager=self.manager)
         self.inst_text = pygame_gui.elements.UITextBox(relative_rect=pygame.Rect(
                                                     self.gamewindow.width/2-100,
                                                     self.gamewindow.height/2-40,
-                                                    200, 195),
+                                                    BUTTONW, 195),
                                                     html_text=
                                             "<b>Instructions</b>"
                                             "<br>Move ball with ARROW keys and jump with SPACE bar."
@@ -59,12 +68,16 @@ class Start:
         self.score_list = pygame_gui.elements.UITextBox(relative_rect=pygame.Rect(
                                                     self.gamewindow.width/2-100,
                                                     self.gamewindow.height/2-70,
-                                                    200, 225),
+                                                    BUTTONW, 225),
                                                     html_text= self.get_scorelist(),
                                                     manager=self.manager,
                                                     visible=False)
 
     def run(self):
+        """Pelivalikkoa pyörittävä silmukka, joka suorittaa
+           pelaajan valikkonappien painamiset ja niistä
+           seuraavat tapahtumat.
+        """
         is_running = True
         clock = pygame.time.Clock()
         while is_running:
@@ -98,6 +111,11 @@ class Start:
             pygame.display.update()
 
     def show_textbox(self, textbox):
+        """Näyttää argumenttina annetun tekstilaatikon.
+
+        Args:
+            textbox (textbox element): tekstiä sisältävä laatikko
+        """
         textbox.visible = True
         self.return_button.visible = True
         self.play_button.disable()
@@ -106,6 +124,11 @@ class Start:
         self.quit_button.disable()
 
     def hide_textbox(self, textbox):
+        """Piilottaa argumenttina annetun tekstilaatikon.
+
+        Args:
+            textbox (textbox element): tekstiä sisältävä laatikko
+        """
         textbox.visible = False
         self.return_button.visible = False
         self.play_button.enable()
@@ -114,10 +137,16 @@ class Start:
         self.quit_button.enable()
 
     def get_scorelist(self):
+        """Hakee ja palauttaa tiedoston sisältämän listan
+            parhaista listaan talletetuista peliajoista.
+
+        Returns:
+            [string]: HTML-muotoiltu lista parhaista ajoista
+        """
         with open("high_score.txt","r") as file:
             scores = []
             for line in file:
-                if line == "\n" or line == "":
+                if line in ("\n", ""):
                     continue
                 parts = line.split(";")
                 nick = parts[0]

@@ -3,6 +3,8 @@ from gamewindow import GameWindow
 from clock import Clock
 
 def main():
+    """Pelin käynnistäminen
+    """
     gamewindow = GameWindow()
     gameclock = Clock()
     game = Start(gamewindow, gameclock)
