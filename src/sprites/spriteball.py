@@ -25,7 +25,7 @@ class Ball (pygame.sprite.Sprite):
         self.current_pl = ground
 
         self.image = pygame.Surface((radius*2,radius*2))
-        self.image.fill(RED)
+        #self.image.fill(RED)
         self.rect = self.image.get_rect()
         self.rect.midbottom = self.current_pl.rect.midtop
         self.max_jumpheight = 150

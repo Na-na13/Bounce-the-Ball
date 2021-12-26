@@ -144,7 +144,7 @@ class GameLoop:
                     star.kill()
                     continue
                 break
-            if self.collected_stars == 3:
+            if self.collected_stars == 7:
                 self.gameover = True
 
     def draw_display(self):
