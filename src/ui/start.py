@@ -60,7 +60,7 @@ class Start:
                                                     html_text=
                                             "<b>Instructions</b>"
                                             "<br>Move ball with ARROW keys and jump with SPACE bar."
-                                            "<br>Collect 10 STARS as fast as you can."
+                                            "<br>Collect 7 STARS as fast as you can."
                                             "<br>Press ESC to start new game."
                                             "<br>Press Q to exit game.",
                                                     manager=self.manager,
