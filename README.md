@@ -1,5 +1,5 @@
 # Bounce the Ball (ohjelmistotekniikka, harjoitustyö)  
-Bounce the Ball on yksinkertainen hyppelypeli, jossa pallolla kerätään 10 pelikentälle satunnaisesti generoituihin paikkoihin ilmestyvää tähteä mahdollisimman nopeasti.
+Bounce the Ball on yksinkertainen hyppelypeli, jossa pallolla pyritään keräämään 7 pelikentälle satunnaisesti generoituihin paikkoihin ilmestyvää tähteä mahdollisimman nopeasti.
   
 ## Dokumentaatiot
 [Tuntikirjanpito](https://github.com/Na-na13/Bounce-the-Ball/blob/master/dokumentaatiot/tuntikirjanpito.md)  
