@@ -14,5 +14,5 @@ pvm    | aika | tehtävät
 13.12.|8 h|tutustumista Pygame_gui-moduliin, koodattu käyttöliittymä, testikattavuutta parannettu
 14.12.|8 h|käyttöohjeen kirjoittaminen, peliä muokattu paremmin pelattavaksi kokonaisuutena
 25.12.|2 h|High score -listan toteuttaminen ja lisääminen peliin
-26.12.|2 h|Eilistä jatkettu
-yht.|63 h|
+26.12.|6 h|Eilistä jatkettu, dokumenttien viimeistelyä
+yht.|67 h|
